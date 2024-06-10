@@ -10,7 +10,7 @@ This tutorial will use Terraform to secure the needed AWS resources and scipts t
 To do this our scripts will ensure we install Java, aquire the latest Minecraft server jar file, and sets it up as a systemd service.
 At the end of this tutorial; executing Terraform commands will allow for full deployment of a Minecraft server without the need of the AWS console.
 
-## Totorial
+## Tutorial
 
 ### Part 1: Environment
 1. **Clone this Repo**: Locally save this repository.
