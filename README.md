@@ -32,7 +32,7 @@ At the end of this tutorial; executing Terraform commands will allow for full de
 ```sh 
 terraform destroy
 ```
-2. **You will have a final chance to make your decicion, if you'd like to continue destroying the server enter 'yes' when prompted**
+2. **You will have a final chance to make your decicion, if you'd like to continue destroying the server enter 'yes' when prompted.**
 
 #### Sources
 1. [Terraform Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/)
