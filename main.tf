@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region                   = "us-east-1"
   shared_credentials_files = ["C:\\Users\\Ezraa\\Documents\\MobaXterm\\home\\.aws\\credentials"]
 }
 
@@ -35,7 +35,7 @@ resource "aws_security_group" "minecraft_sg" {
 
 resource "aws_instance" "minecraft_server" {
   ami                    = "ami-00beae93a2d981137"
-  instance_type          = "t2.micro"
+  instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.minecraft_sg.id]
   key_name               = "MinecraftServerKey"
 
@@ -48,18 +48,18 @@ resource "aws_instance" "minecraft_server" {
     user        = "ec2-user"
     private_key = file("C:\\Users\\Ezraa\\Desktop\\Course-Project-Part-2\\MinecraftServerKey.pem")
     host        = self.public_ip
-    agent = "false"
+    agent       = "false"
   }
 
   provisioner "file" {
-    content     = file("MinecraftServer.sh")
+    content     = file("C:\\Users\\Ezraa\\Desktop\\Course-Project-Part-2\\MinecraftServer.sh")
     destination = "/home/ec2-user/MinecraftServer.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
       "chmod +x /home/ec2-user/MinecraftServer.sh",
-      "/home/ec2-user/MinecraftServer.sh"
+      "/bin/bash /home/ec2-user/MinecraftServer.sh"
     ]
   }
 }
